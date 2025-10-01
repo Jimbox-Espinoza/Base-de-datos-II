@@ -1,200 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso - Repositorio Académico</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .login-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        
-        .login-box {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            padding: 40px;
-            width: 100%;
-            max-width: 500px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            border: 1px solid rgba(0, 210, 255, 0.3);
-        }
-        
-        .login-logo {
-            width: 150px;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.7));
-        }
-        
-        .login-title {
-            color: #0ff;
-            text-shadow: 0 0 15px rgba(0, 210, 255, 0.7);
-            margin-bottom: 10px;
-            font-size: 2.2rem;
-        }
-        
-        .login-subtitle {
-            color: #9ad6e3;
-            margin-bottom: 35px;
-            font-size: 1.1rem;
-        }
-        
-        .note {
-            margin-top: 30px;
-            color: #a0d2e0;
-            font-size: 0.9rem;
-        }
-        
-        .university {
-            margin-top: 25px;
-            color: #88c9da;
-            font-weight: 500;
-        }
-        
-        .custom-google-btn {
-            background: #4285F4;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            width: 300px;
-            max-width: 100%;
-            transition: background 0.3s, transform 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.25);
-        }
-        
-        .custom-google-btn:hover {
-            background: #3367D6;
-            transform: translateY(-2px);
-        }
-        
-        .custom-google-btn:active {
-            transform: translateY(0);
-        }
-        
-        .google-icon {
-            background: white;
-            border-radius: 2px;
-            padding: 3px;
-            margin-right: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .google-icon img {
-            width: 20px;
-            height: 20px;
-        }
-        
-        .loading {
-            display: none;
-            margin: 20px auto;
-            color: #0ff;
-            font-size: 14px;
-        }
-        
-        .spinner {
-            border: 3px solid rgba(0, 210, 255, 0.3);
-            border-radius: 50%;
-            border-top: 3px solid #0ff;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repositorio Académico BD_II</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .login-container {
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      padding: 20px; box-sizing: border-box;
+    }
+    .login-box {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 20px; padding: 40px;
+      width: 100%; max-width: 500px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      text-align: center; border: 1px solid rgba(0, 210, 255, 0.3);
+      color: #fff;
+    }
+    .login-title {
+      color: #0ff;
+      text-shadow: 0 0 15px rgba(0, 210, 255, 0.7);
+      margin-bottom: 10px; font-size: 2.2rem;
+    }
+    .login-subtitle {
+      color: #9ad6e3; margin-bottom: 35px; font-size: 1.1rem;
+    }
+    .note { margin-top: 30px; color: #a0d2e0; font-size: 0.9rem; }
+    .university { margin-top: 25px; color: #88c9da; font-weight: 500; }
+    .custom-google-btn {
+      background: #4285F4; color: white; border: none; border-radius: 4px;
+      padding: 12px 24px; font-size: 16px; font-weight: 500; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto; width: 300px; max-width: 100%;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    }
+    .custom-google-btn:hover { background: #3367D6; transform: translateY(-2px); }
+    .custom-google-btn:active { transform: translateY(0); }
+    .google-icon {
+      background: white; border-radius: 2px; padding: 3px; margin-right: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .google-icon img { width: 20px; height: 20px; }
+    .loading { display: none; margin: 20px auto; color: #0ff; font-size: 14px; }
+    .spinner {
+      border: 3px solid rgba(0, 210, 255, 0.3);
+      border-radius: 50%; border-top: 3px solid #0ff;
+      width: 20px; height: 20px; animation: spin 1s linear infinite;
+      margin: 0 auto 10px;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .welcome { font-size: 1.2rem; color: #0ff; margin-top: 20px; }
+  </style>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
-            <h1 class="login-title">Repositorio Académico BD_II</h1>
-            
-            <!-- Botón personalizado de Google Sign-In -->
-            <button id="custom-google-btn" class="custom-google-btn">
-                <span class="google-icon">
-                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google">
-                </span>
-                Iniciar sesión con Google
-            </button>
-            
-            <div class="loading" id="loading">
-                <div class="spinner"></div>
-                Redirigiendo a Google...
-            </div>
-            
-            <p class="note">Al iniciar sesión aceptas nuestros términos y condiciones de uso</p>
-            <p class="university">Universidad Peruana Los Andes</p>
-        </div>
+  <div class="login-container">
+    <div class="login-box">
+      <h1 class="login-title">Repositorio Académico BD_II</h1>
+
+      <!-- Botón personalizado de Google Sign-In -->
+      <button id="custom-google-btn" class="custom-google-btn">
+        <span class="google-icon">
+          <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google">
+        </span>
+        Iniciar sesión con Google
+      </button>
+
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        Redirigiendo a Google...
+      </div>
+
+      <!-- Aquí aparecerá el mensaje de bienvenida -->
+      <div id="welcome-message" class="welcome" style="display:none;"></div>
+
+      <p class="note">Al iniciar sesión aceptas nuestros términos y condiciones de uso</p>
+      <p class="university">Universidad Peruana Los Andes</p>
     </div>
+  </div>
 
-    <script>
-        // ID de cliente de Google (REEMPLAZAR CON EL TUYO)
-        const CLIENT_ID = '760068419919-3i5f2m760vut2hbpomdiqso4qdf8hbjr.apps.googleusercontent.com';
-        
-        // Función para iniciar el login con Google
-        function iniciarLoginGoogle() {
-            // Mostrar carga
-            document.getElementById('loading').style.display = 'block';
-            document.getElementById('custom-google-btn').style.display = 'none';
-            
-            // CORRECCIÓN 1: Usar el alias 'email' en lugar del scope completo
-            const scope = 'email';
-            
-            // CORRECCIÓN 2: Codificar correctamente los parámetros
-            const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
-                `client_id=${encodeURIComponent(CLIENT_ID)}` +
-                `&redirect_uri=${encodeURIComponent('https://jimbox-espinoza.github.io/Base-de-datos-II/')}` +
-                `&response_type=code` +
-                `&scope=${encodeURIComponent(scope)}` +
-                `&access_type=offline` +
-                `&prompt=select_account`;
-            
-            // Redirigir a Google en la MISMA pestaña
-            window.location.href = authUrl;
-        }
-        
-        // Asignar evento al botón
-        document.getElementById('custom-google-btn').addEventListener('click', iniciarLoginGoogle);
-        
-        // Manejar parámetros de error si existen
-        const urlParams = new URLSearchParams(window.location.search);
-        const error = urlParams.get('error');
-        
-        if (error) {
-            // CORRECCIÓN 3: Mensaje más informativo
-            alert(`Error de autenticación (${error}): 
-Por favor verifica que estés usando una cuenta autorizada o contacta al administrador.`);
-        }
-    </script>
+  <script>
+    // ID de cliente de Google (reemplaza por el tuyo de Google Cloud Console)
+    const CLIENT_ID = "TU_CLIENT_ID.apps.googleusercontent.com";
+    const REDIRECT_URI = "https://jimbox-espinoza.github.io/Base-de-datos-II/";
+
+    // Inicia el login con Google
+    function iniciarLoginGoogle() {
+      document.getElementById("loading").style.display = "block";
+      document.getElementById("custom-google-btn").style.display = "none";
+
+      const scope = "email profile"; // pedimos email y perfil básico
+      const authUrl =
+        "https://accounts.google.com/o/oauth2/v2/auth?" +
+        `client_id=${encodeURIComponent(CLIENT_ID)}` +
+        `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}` +
+        `&response_type=token` + // usamos token implícito (todo en index.html)
+        `&scope=${encodeURIComponent(scope)}` +
+        `&prompt=select_account`;
+
+      window.location.href = authUrl;
+    }
+
+    // Asignar evento al botón
+    document
+      .getElementById("custom-google-btn")
+      .addEventListener("click", iniciarLoginGoogle);
+
+    // Revisar si volvemos de Google con el token
+    window.onload = () => {
+      const hash = window.location.hash.substring(1);
+      const params = new URLSearchParams(hash);
+      const accessToken = params.get("access_token");
+
+      if (accessToken) {
+        // Ocultar botón y loader
+        document.getElementById("custom-google-btn").style.display = "none";
+        document.getElementById("loading").style.display = "none";
+
+        // Obtener info del usuario con el token
+        fetch("https://www.googleapis.com/oauth2/v2/userinfo", {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            document.getElementById("welcome-message").style.display = "block";
+            document.getElementById(
+              "welcome-message"
+            ).innerText = `Bienvenido, ${data.name} (${data.email}) 🎉`;
+          })
+          .catch((err) => {
+            console.error("Error al obtener datos de Google", err);
+            alert("Hubo un problema al iniciar sesión.");
+          });
+      }
+    };
+  </script>
 </body>
-
 </html>
-
